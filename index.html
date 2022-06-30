@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Final Project</title>
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@300&display=swap" rel="stylesheet">
+        
+        <script src="scripts/jquery-3.6.0.slim.min.js" defer></script>
+
+        <script src="scripts/script.js" defer></script>
+    </head>
+    <body>
+
+        
+        <div class="wrapper">
+
+            <div id="sidebar1">
+                <p></p>
+            </div>
+            <div id="sidebar2">
+                <p></p>
+            </div>
+
+            <header>
+                <h1>Final Project - Jacob Harris</h1>
+            </header>
+
+            <div id="card1">
+            <div class="card">
+                
+                    <h2>Dice Game</h2>
+                    
+                    <h3>Directions:</h3>
+                    <p>Press the roll button to roll yours and the computers dice. After you'ved rolled 3 times, whoever has the highest score wins! Press the reset button to reset the game and your scores.</p>
+                    <h3>Modifiers:</h3>
+                    <p>1. If any player's dice roles a 1, that rounds score will be zero.</p>
+                    <p>2. If any player rolls a pair, the sum of the 2 dice will be multiplied by 2.</p>
+                </div>
+            </div>
+
+            <div id="player-dice">
+                <div class="card">
+                    <div class="player-dice-card">
+                    <h3 id="pdice-heading">Your Dice:</h3>
+                    <div class="player-dice-output1">
+                        <img src="images/dice-empty.png" alt="empty dice" id="pdice1">
+                    </div>
+                    <div class="player-dice-output2">
+                        <img src="images/dice-empty.png" alt="empty dice" id="pdice2">
+                    </div>
+
+                    <p id="p-round-score">Round Score:</p>
+                    <div id="player-round-score">
+                    </div>
+
+                    <p id="p-total-score">Total Score:</p>
+                    <div id="player-total-score">
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div id="computer-dice">
+                <div class="card">
+                    <div class="computer-dice-card">
+                    <h3 id="cdice-heading">Computers Dice:</h3>
+                    <div class="computer-dice-output1">
+                        <img src="images/dice-empty.png" alt="empty dice" id="cdice1">
+                    </div>
+                    <div class="computer-dice-output2">
+                        <img src="images/dice-empty.png" alt="empty dice" id="cdice2">
+                    </div>
+
+                    <p id="c-round-score">Round Score:</p>
+                    <div id="computer-round-score"></div>
+
+                    <p id="c-total-score">Total Score:</p>
+                    <div id="computer-total-score"></div>
+                </div>
+                </div>
+            </div>
+
+
+            <div id="card2">
+            <div class="card">
+                
+                    <h2>Play!</h2>
+                    <div id="round-count"></div>
+                    
+                    <button class="game-button" id="roll-button">ROLL</button>
+                    <button class="game-button" id="reset-button">RESET</button>
+                </div>
+            </div>
+
+            <section id='pop-up'>
+                <div id="inside-popup">
+                    <button id="close-pop-up">&#x2715;</button>
+
+                    <div id="win-lose-heading">
+                    </div>	
+                    
+                    <p>Click the 'X' to reset and try again!</p>
+               </div>
+            </div>
+            
+
+            
+
+        </div>
+    </body>
+
+    </html>

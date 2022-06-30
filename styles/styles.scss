@@ -1,0 +1,272 @@
+
+
+$bodyBackground: #F8ECD1;
+$cardBorder: #AC7D88;
+$secondaryBorder: #85586F;
+$cardBackground: #DEB6AB;
+
+@mixin box-shadow($top, $left, $blur, $color) {
+      box-shadow: $top $left $blur $color;
+  }
+
+html {
+	font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+body {
+    background-color: $bodyBackground;
+}
+
+img {
+    height: 100%;
+    border-radius: 5px;
+    @include box-shadow(1px, 1px, 15px, #888888);
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+    background-color: $cardBackground;
+    border-radius: 10px;
+    height: 100px;
+    grid-area: header;
+    
+}
+
+
+.game-button{
+    padding: 5px;
+    margin: 10px;
+	font-weight: bold;
+	border:solid 3px $secondaryBorder;
+    border-radius: 5px;
+	cursor:pointer;
+}
+
+
+.card {
+    border: 2px solid $cardBorder;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 5px;
+    background-color: $cardBackground;
+    @include box-shadow(1px, 1px, 10px, $cardBorder);
+}
+
+#card1
+{
+    border-radius: 10px;
+    margin: 10px;
+    padding: 3px;
+    text-align: center;
+    border: $secondaryBorder solid 3px;
+    @include box-shadow(5px, 5px, 4px, $secondaryBorder);
+}
+
+#card2
+{
+    border-radius: 10px;
+    margin: 5px;
+    padding: 3px;
+    text-align: center;
+    border: $secondaryBorder solid 3px;
+    @include box-shadow(5px, 5px, 4px, $secondaryBorder);
+}
+
+#pdice1{
+    grid-area: pdice1;
+}
+
+#pdice2{
+    grid-area: pdice2;
+}
+
+#pdice-heading{
+    grid-area: pdiceheading;
+}
+
+#p-round-score{
+    grid-area: proundscore;
+}
+
+#player-round-score{
+    grid-area:proundoutput
+}
+
+#p-total-score{
+    grid-area: ptotalscore;
+}
+
+#player-total-score{
+    grid-area: ptotaloutput;
+}
+
+#cdice1{
+    grid-area: cdice1;
+}
+
+#cdice2{
+    grid-area: cdice2;
+}
+
+#cdice-heading{
+    grid-area: cdiceheading;
+}
+
+#c-round-score{
+    grid-area: croundscore;
+}
+
+#computer-round-score{
+    grid-area:croundoutput
+}
+
+#c-total-score{
+    grid-area: ctotalscore;
+}
+
+#computer-total-score{
+    grid-area: ctotaloutput;
+}
+
+.player-dice-card{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "pdiceheading pdiceheading"
+    "pdice1 pdice2"
+    "proundscore proundoutput"
+    "ptotalscore ptotaloutput"
+}
+
+.computer-dice-card{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "cdiceheading cdiceheading"
+    "cdice1 cdice2"
+    "croundscore croundoutput"
+    "ctotalscore ctotaloutput"
+}
+
+#computer-dice{
+    text-align: center;
+    display: grid;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 0.66fr 0.5fr 0.5fr 0.66fr;
+	grid-template-areas:
+    "sidebar1 header header sidebar2"
+    "sidebar1 card1 card1 sidebar2"
+    "sidebar1 player computer sidebar2"
+    "sidebar1 card2 card2 sidebar2"
+}
+
+header{
+    grid-area: header;
+}
+
+#sidebar1 {
+    grid-area: sidebar1;
+}
+
+#sidebar2 {
+    grid-area: sidebar2;
+}
+
+#card1 {
+    grid-area: card1;
+}
+
+#player-dice{
+    grid-area: player;
+}
+
+#computer-dice{
+    grid-area: computer;
+}
+
+#card2 {
+    grid-area: card2;
+}
+
+#pop-up{
+	
+    position:fixed;
+    top:0px;
+    left:0px;  
+    width:100vw;
+    height:100vh;    
+	z-index:1000;
+	background-color: rgba(65, 46, 66, 0.8);    
+	font-size:.85em;
+    opacity: 0;
+    transition: opacity 1s;
+    display: block;
+}
+
+#inside-popup{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%, -50%);
+	max-width:400px;
+	min-width:300px;
+	padding:10px;
+	border-radius:10px;
+	background-color: green;
+	color:white;
+}
+
+#close-pop-up{
+	background-color: white;
+	color:rgb(110, 35, 35);
+	border-radius: 50%;
+	font-weight: bold;
+	border:solid 3px rgb(133, 130, 132);
+	cursor:pointer;
+	position:absolute;
+	top:-10px;
+	right:-10px;
+    z-index:1000;
+}
+
+.nodisplay 
+{
+    display: none;
+}
+
+@media screen and (max-width: 1175px) {
+    .wrapper {
+        grid-template-columns: 0.5fr 2fr 0.5fr;
+        grid-template-areas: 
+        "sidebar1 header sidebar2"
+        "sidebar1 card1 sidebar2"
+        "sidebar1 player sidebar2"
+        "sidebar1 computer sidebar2"
+        "sidebar1 card2 sidebar2"
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "card1"
+        "player"
+        "computer"
+        "card2"
+        "sidebar1"
+        "sidebar2"
+    }
+}
